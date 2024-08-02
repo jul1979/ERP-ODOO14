@@ -19,12 +19,14 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'point_of_sale'],
+    'depends': ['base', 'point_of_sale', 'stock'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
         'data/author_data.xml',
+        'data/supplier.xml',
+        'data/stock_initial.xml',
         'views/menu.xml',
         'views/book_view.xml',
         'views/author_view.xml',

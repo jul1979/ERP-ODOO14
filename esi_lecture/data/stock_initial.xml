@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+         <record id="product_category_books" model="product.category">
+      <field name="name">books</field>
+    </record>
+
+    <record id="stock_inventory_livre" model="stock.inventory">
+      <field name="name">Starting Inventory books</field>
+    </record>
+        <!-- Lignes d'inventaire pour chaque produit/livre(s)/coffret -->
+    <record id="product_template_coffret_potter" model="product.product">
+      <field name="name">Coffret Potter</field>
+      <field name="standard_price">40.0</field>
+      <field name="list_price">50.0</field>
+      <field name="type">product</field>
+      <field name="weight">0.7</field>
+      <field name="available_in_pos">true</field>
+      <field name="default_code">Box1</field>
+      <field name="categ_id" ref="product_category_books"/>
+      <field name="livre_ids" eval="[(6, 0, [ref('book_harry_potter_1'), ref('book_harry_potter_2'), ref('book_harry_potter_3')])]"/>
+      <field name="image_1920" type="base64" file="esi_lecture/static/image/harryPotterCollection.jpg"/>
+    </record>
+
+    <record id="stock_inventory_line_coffret_potter" model="stock.inventory.line">
+      <field name="product_id" ref="product_template_coffret_potter"/>
+      <field name="product_uom_id" ref="uom.product_uom_unit"/>
+      <field name="inventory_id" ref="stock_inventory_livre"/>
+      <field name="product_qty">10.0</field>
+      <field name="location_id" model="stock.location" eval="obj().env.ref('stock.warehouse0').lot_stock_id.id"/>
+    </record>
+
+
+    <record id="product_template_book_1" model="product.product">
+      <field name="name">book 1</field>
+      <field name="standard_price">8.9</field>
+      <field name="list_price">14.9</field>
+      <field name="type">product</field>
+      <field name="weight">0.18</field>
+      <field name="available_in_pos">true</field>
+      <field name="default_code">2070584623</field>
+      <field name="categ_id" ref="product_category_books"/>
+      <field name="livre_ids" eval="[(6, 0, [ref('book_harry_potter_1')])]"/>
+      <field name="image_1920" type="base64" file="esi_lecture/static/image/harryPotter1.jpg"/>
+    </record>
+
+    <record id="stock_inventory_line_book_1" model="stock.inventory.line">
+      <field name="product_id" ref="product_template_book_1"/>
+      <field name="product_uom_id" ref="uom.product_uom_unit"/>
+      <field name="inventory_id" ref="stock_inventory_livre"/>
+      <field name="product_qty">42.0</field>
+      <field name="location_id" model="stock.location" eval="obj().env.ref('stock.warehouse0').lot_stock_id.id"/>
+    </record>
+
+    <record id="product_template_book_2" model="product.product">
+      <field name="name">book 2</field>
+      <field name="standard_price">9.9</field>
+      <field name="list_price">14.9</field>
+      <field name="type">product</field>
+      <field name="weight">0.23</field>
+      <field name="available_in_pos">true</field>
+      <field name="default_code">207058464X</field>
+      <field name="categ_id" ref="product_category_books"/>
+      <field name="livre_ids" eval="[(6, 0, [ref('book_harry_potter_2')])]"/>
+      <field name="image_1920" type="base64" file="esi_lecture/static/image/harryPotter2.jpg"/>
+    </record>
+
+    <record id="stock_inventory_line_book_2" model="stock.inventory.line">
+      <field name="product_id" ref="product_template_book_2"/>
+      <field name="product_uom_id" ref="uom.product_uom_unit"/>
+      <field name="inventory_id" ref="stock_inventory_livre"/>
+      <field name="product_qty">100.0</field>
+      <field name="location_id" model="stock.location" eval="obj().env.ref('stock.warehouse0').lot_stock_id.id"/>
+    </record>
+
+    <record id="product_template_book_3" model="product.product">
+      <field name="name">book 3</field>
+      <field name="standard_price">9.9</field>
+      <field name="list_price">14.9</field>
+      <field name="type">product</field>
+      <field name="weight">0.23</field>
+      <field name="available_in_pos">true</field>
+      <field name="default_code">2070584925</field>
+      <field name="categ_id" ref="product_category_books"/>
+      <field name="livre_ids" eval="[(6, 0, [ref('book_harry_potter_3')])]"/>
+      <field name="image_1920" type="base64" file="esi_lecture/static/image/harryPotter3.jpg"/>
+    </record>
+
+    <record id="stock_inventory_line_book_3" model="stock.inventory.line">
+      <field name="product_id" ref="product_template_book_3"/>
+      <field name="product_uom_id" ref="uom.product_uom_unit"/>
+      <field name="inventory_id" ref="stock_inventory_livre"/>
+      <field name="product_qty">130.0</field>
+      <field name="location_id" model="stock.location" eval="obj().env.ref('stock.warehouse0').lot_stock_id.id"/>
+    </record>
+
+    <record id="product_template_book_4" model="product.product">
+      <field name="name">book 4</field>
+      <field name="standard_price">19.99</field>
+      <field name="list_price">24.99</field>
+      <field name="type">product</field>
+      <field name="weight">0.86</field>
+      <field name="available_in_pos">true</field>
+      <field name="default_code">2221249488</field>
+      <field name="categ_id" ref="product_category_books"/>
+      <field name="livre_ids" eval="[(6, 0, [ref('book_dune_1')])]"/>
+      <field name="image_1920" type="base64" file="esi_lecture/static/image/dune1.jpg"/>
+    </record>
+
+    <record id="stock_inventory_line_book_4" model="stock.inventory.line">
+      <field name="product_id" ref="product_template_book_4"/>
+      <field name="product_uom_id" ref="uom.product_uom_unit"/>
+      <field name="inventory_id" ref="stock_inventory_livre"/>
+      <field name="product_qty">500.0</field>
+      <field name="location_id" model="stock.location" eval="obj().env.ref('stock.warehouse0').lot_stock_id.id"/>
+    </record>
+
+   <!-- Démarrer l'inventaire -->
+    <function model="stock.inventory" name="_action_start">
+      <function eval="[[('state','=','draft'),('id', '=', ref('stock_inventory_livre'))]]" model="stock.inventory" name="search"/>
+    </function>
+      <!-- Valider l'inventaire -->
+    <function model="stock.inventory" name="action_validate">
+      <function eval="[[('state','=','confirm'),('id', '=', ref('stock_inventory_livre'))]]" model="stock.inventory" name="search"/>
+    </function>
+
+    </data>
+</odoo>

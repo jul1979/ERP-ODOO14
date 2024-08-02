@@ -36,6 +36,8 @@
             <field name="model">res.partner</field>
             <field name="arch" type="xml">
                 <search>
+                    <field name="name"/>
+                    <field name="is_author"/>
                     <filter string="Auteurs" name="is_author" domain="[('is_author', '=', True)]"/>
                 </search>
             </field>

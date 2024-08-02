@@ -34,6 +34,7 @@
     </record>
 
     <menuitem id="main_menu_bibliotheque" name="esi_lecture">
+
         <menuitem id="bibliotheque_menu" name="Livres">
             <menuitem id="livres_menu" action="livre_list_action"/>
         </menuitem>
@@ -43,6 +44,16 @@
         <menuitem id="bibliotheque_product_menu" name="Produits">
             <menuitem id="product_menu" action="product_template_action_product"/>
         </menuitem>
+        <menuitem id="bibliotheque_product_menu" name="Produits">
+            <menuitem id="product_menu" action="product_template_action_product"/>
+        </menuitem>
+        <menuitem id="bibliotheque_stock_menu" name="Stock Operations">
+            <menuitem id="stock_picking_type_menu" action="stock.stock_picking_type_action"/>
+        </menuitem>
+        <menuitem id="bibliotheque_pos_menu" name="POS Configurations">
+            <menuitem id="pos_config_menu" action="point_of_sale.action_pos_config_kanban"/>
+        </menuitem>
+
     </menuitem>
 </odoo>
 
