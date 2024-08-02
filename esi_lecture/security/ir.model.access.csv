@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_esi_lecture_esi_lecture_livre,esi.lecture.esi.lecture.livre,model_esi_lecture_livre,base.group_system,1,1,1,1
+access_esi_lecture_esi_lecture_livrelike,esi.lecture.esi.lecture.livrelike,model_esi_lecture_livrelike,base.group_system,1,1,1,1
+access_res_partner_extended,access.res.partner.extended,model_res_partner,base.group_system,1,1,1,1

@@ -1,0 +1,120 @@
+<odoo>
+    <data>
+        <record id="esi_lecture_livre_form" model="ir.ui.view">
+            <field name="name">esi.lecture.livre.form</field>
+            <field name="model">esi.lecture.livre</field>
+            <field name="arch" type="xml">
+                <form string="Livres">
+                    <sheet>
+<!--                        <field name="image_1920" widget='image' class="oe_avatar" options='{"preview_image": "image_128"}'/>-->
+
+<!--                         <field name="couverture" widget="image" class="oe_avatar" options='{"preview_image": "image_128"}'/>-->
+
+                        <div class="oe_button_box" name="button_box">
+                            <button name="toggle_like" type="object" class="oe_stat_button" icon="fa-thumbs-up">
+<!--                                <field name="like_count" widget="statinfo" string="Likes"/>-->
+                                <div class="o_stat_info">
+                                <field name="like_count" class="o_stat_value"/>
+                                <span class="o_stat_text" >Likes</span>
+                                </div>
+                            </button>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="auteur_ids" widget="many2many_tags"/>
+                                <field name="nombre_pages"/>
+                            </group>
+                            <group>
+                                <field name="date_publication"/>
+                                <field name="couverture" widget="image"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="description"></field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="esi_lecture_livre_view_tree" model="ir.ui.view">
+            <field name="name">esi.lecture.livre.tree</field>
+            <field name="model">esi.lecture.livre</field>
+            <field name="arch" type="xml">
+                <tree string="Livres">
+                    <field name="name"/>
+                    <field name="date_publication"/>
+                </tree>
+            </field>
+        </record>
+        <record id="esi_lecture_livre_view_search" model="ir.ui.view">
+            <field name="name">esi.lecture.livre.search</field>
+            <field name="model">esi.lecture.livre</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="auteur_ids"/>
+                    <filter string="Without Authors" name="without authors" domain="[('auteur_ids', '=', False)]"/>
+                </search>
+            </field>
+        </record>
+
+
+        <!-- explicit list view definition -->
+        <!--
+            <record model="ir.ui.view" id="esi_lecture.list">
+              <field name="name">esi_lecture list</field>
+              <field name="model">esi_lecture.esi_lecture</field>
+              <field name="arch" type="xml">
+                <tree>
+                  <field name="name"/>
+                  <field name="value"/>
+                  <field name="value2"/>
+                </tree>
+              </field>
+            </record>
+        -->
+
+        <!-- actions opening views on models -->
+        <!--
+            <record model="ir.actions.act_window" id="esi_lecture.action_window">
+              <field name="name">esi_lecture window</field>
+              <field name="res_model">esi_lecture.esi_lecture</field>
+              <field name="view_mode">tree,form</field>
+            </record>
+        -->
+
+        <!-- server action to the one above -->
+        <!--
+            <record model="ir.actions.server" id="esi_lecture.action_server">
+              <field name="name">esi_lecture server</field>
+              <field name="model_id" ref="model_esi_lecture_esi_lecture"/>
+              <field name="state">code</field>
+              <field name="code">
+                action = {
+                  "type": "ir.actions.act_window",
+                  "view_mode": "tree,form",
+                  "res_model": model._name,
+                }
+              </field>
+            </record>
+        -->
+
+        <!-- Top menu item -->
+        <!--
+            <menuitem name="esi_lecture" id="esi_lecture.menu_root"/>
+        -->
+        <!-- menu categories -->
+        <!--
+            <menuitem name="Menu 1" id="esi_lecture.menu_1" parent="esi_lecture.menu_root"/>
+            <menuitem name="Menu 2" id="esi_lecture.menu_2" parent="esi_lecture.menu_root"/>
+        -->
+        <!-- actions -->
+        <!--
+            <menuitem name="List" id="esi_lecture.menu_1_list" parent="esi_lecture.menu_1"
+                      action="esi_lecture.action_window"/>
+            <menuitem name="Server to list" id="esi_lecture" parent="esi_lecture.menu_2"
+                      action="esi_lecture.action_server"/>
+        -->
+    </data>
+</odoo>

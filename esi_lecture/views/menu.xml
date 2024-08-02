@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="livre_list_action" model="ir.actions.act_window">
+        <field name="name">Livres</field>
+        <field name="res_model">esi.lecture.livre</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create the first book</p>
+        </field>
+    </record>
+
+
+    <record id="auteur_list_action" model="ir.actions.act_window">
+        <field name="name">Auteurs</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+<!--        <field name="context">{'search_default_auteur': 1}</field>
+        <field name="domain">[('livre_ids', '!=', False)]</field>-->
+        <field name="context">{'search_default_is_author': True}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new author in your library
+            </p>
+        </field>
+    </record>
+
+
+    <menuitem id="main_menu_bibliotheque" name="esi_lecture">
+        <menuitem id="bibliotheque_menu" name="Livres">
+            <menuitem id="livres_menu" action="livre_list_action"/>
+        </menuitem>
+        <menuitem id="bibliotheque_auteur_menu" name="Auteurs">
+            <menuitem id="auteur_menu" action="auteur_list_action"/>
+        </menuitem>
+    </menuitem>
+</odoo>
+
+
