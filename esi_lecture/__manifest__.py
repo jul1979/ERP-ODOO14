@@ -19,7 +19,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'point_of_sale'],
 
     # always loaded
     'data': [
@@ -27,7 +27,8 @@
         'data/author_data.xml',
         'views/menu.xml',
         'views/book_view.xml',
-        'views/author_view.xml'
+        'views/author_view.xml',
+        'views/product_template_views.xml'
     ],
     # only loaded in demonstration mode
     'demo': [

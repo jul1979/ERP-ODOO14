@@ -39,6 +39,7 @@ class Livre(models.Model):
         #         if not record.auteur_ids:
         #             raise ValidationError("Un livre doit avoir au moins un auteur.")
 
+    @api.depends('like_ids')
     def _compute_like_count(self):
         for livre in self:
             livre.like_count = len(livre.like_ids)

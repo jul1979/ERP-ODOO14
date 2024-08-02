@@ -88,5 +88,11 @@
             <field name="auteur_ids" eval="[(6, 0, [ref('author_3')])]"/>
             <field name="couverture" type="base64" file="esi_lecture/static/image/dune1.jpg"/>
         </record>
+<!--        <record id="partner_presses_universitaires_bruxelles" model="res.partner">
+            <field name="name">Presses Universitaires de Bruxelles</field>
+            <field name="supplier_rank">1</field>
+            <field name="customer_rank">0</field>
+            <field name="company_type">company</field>
+        </record>-->
     </data>
 </odoo>
